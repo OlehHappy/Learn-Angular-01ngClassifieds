@@ -4,13 +4,11 @@
 
   angular
     .module("ngClassifieds")
-    .controller("classifiedsCtrl", function($scope) {
+    .controller("classifiedsCtrl", function($scope, $http) {
 
-      $scope.name = {
-        first: "Oleh",
-        last: "Daybov"
-      };
+      $http.get('data/classifieds.json').then(function(classifieds) {
+          $scope.classifieds = classifieds.data;
+      });
 
-      $scope.message = "Hello, World!!!";
     });
 })();
