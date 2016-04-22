@@ -10,5 +10,7 @@
         first: "Oleh",
         last: "Daybov"
       };
+
+      $scope.message = "Hello, World!!!";
     });
 })();
