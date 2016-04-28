@@ -56,12 +56,12 @@
               ng-model="classified.image">
         </md-input-container>
 
-        <md-button class="md-primary"
+        <md-button ng-if="!editing" class="md-primary"
             ng-click="saveClassified(classified)">
           Save
         </md-button>
 
-        <md-button class="md-primary">
+        <md-button ng-click="saveEdit()" ng-if="editing" class="md-primary">
           Save Edit
         </md-button>
 
@@ -123,7 +123,8 @@
         <div class="classified-admin" ng-if="showAdmin">
           <h3>Admin</h3>
           <div layout="row">
-            <md-button class="md-primary">Edit</md-button>
+            <md-button class="md-primary"
+                  ng-click="editClassified(classified)">Edit</md-button>
             <md-button class="md-warn">Delete</md-button>
           </div>
         </div>
