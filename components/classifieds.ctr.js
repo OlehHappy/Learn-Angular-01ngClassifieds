@@ -2,6 +2,7 @@
 
   "use strict";
 
+
   angular
     .module("ngClassifieds")
     .controller("classifiedsCtrl", function($scope, classifiedsFactory, $mdSidenav, $mdToast, $mdDialog) {
