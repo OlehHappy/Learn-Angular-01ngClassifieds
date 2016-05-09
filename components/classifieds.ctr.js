@@ -9,7 +9,7 @@
 
       classifiedsFactory.getClassifieds().then(function(classifieds) {
           $scope.classifieds = classifieds.data;
-          $scope.categories = getCategories(classifieds.data);
+          $scope.categories = getCategories($scope.classifieds);
       });
 
       var contact = {
