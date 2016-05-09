@@ -34,6 +34,15 @@
       <input type="text" ng-model="classifiedsFilter"></input>
     </md-input-container>
 
+    <md-input-container>
+      <label>Category</label>
+      <md-select>
+        <md-option ng-repeat="category in categories" value="{{category}}">
+          {{category}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+
   </div>
 
   <md-sidenav class="md-sidenav-left md-whiteframe-z2"
@@ -92,7 +101,7 @@
   </md-sidenav>
 
   <md-content class="md-padding" layout="row" layout-wrap>
-    <md-card ng-repeat="classified in classifieds | filter: classifiedsFilter" accesskey=""flex="30">
+    <md-card ng-repeat="classified in classifieds | filter: classifiedsFilter" flex="30">
       <img src="{{classified.image}}">
       <md-card-content>
 
@@ -153,6 +162,7 @@
   <script src="node_modules/angular-animate/angular-animate.js"></script>
   <script src="node_modules/angular-aria/angular-aria.js"></script>
   <script src="node_modules/angular-material/angular-material.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.js"></script>
   <script src="scripts/app.js"></script>
   <script src="components/classifieds.ctr.js"></script>
   <script src="components/classifieds.fac.js"></script>
